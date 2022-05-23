@@ -6,21 +6,22 @@ import Header from "./component/Header"
 import './index.css'
 import Home from "./component/Home"
 import MovieForm from "./component/MovieForm"
+import {MovieContext} from './context/ContextMovie'
 function App() {
   const[movie,setMovie]=useState(Movies);
   return (
-    <>
+    <MovieContext>
     <Router>
     <Header/>
     <div className="movie-container">
     <Routes>
-      <Route exact path="/" element={<MoviesList movies={movie}/>}/>
+      <Route exact path="/" element={<MoviesList/>}/>
      <Route path="/home" element={<Home/>}/>
      <Route path="/browse" element={<MovieForm/>}/>
     </Routes>
     </div>
     </Router>
-    </>
+    </MovieContext>
    
   )
 }

@@ -1,9 +1,12 @@
+import { useContext } from "react"
+import ContextMovie from "../context/ContextMovie"
 import Movie from "./Movie"
 
-function MoviesList({movies}) {
+function MoviesList() {
+  const{moviesList}=useContext(ContextMovie)
   return ( 
     <div className="movie-list">
-        {movies.map((movie)=> <Movie item={movie} />)}
+        {moviesList.map((movie)=> <Movie item={movie} />)}
     </div>
   )
 }
