@@ -108,7 +108,7 @@
     display: block;
 }
 .movie-form .input-group #coverPhoto{
-    display: none;
+    display: block;
 }
 .movie-form .input-group label[for='coverPhoto']{
     display: flex;
