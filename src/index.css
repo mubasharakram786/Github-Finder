@@ -132,13 +132,30 @@
 width: 100%;
 height: 300px;
 position: relative;
+border: 1px solid #eee;
+}
+.movie-form .input-group .upload-image .fa-times{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color .3s linear, opacity .3s linear;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.movie-form .input-group .upload-image .fa-times:hover{
+    opacity: 1;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
 }
 .movie-form .input-group .upload-image img{
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-.movie-form .input-group .upload-image {
 }
 .movie-form .input-group input[type="text"],
 .movie-form .input-group input[type="number"]{
