@@ -1,29 +1,23 @@
-import { useState } from "react"
-import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
-import MoviesList from "./component/MoviesList"
-import {Movies} from './data/data'
-import Header from "./component/Header"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Footer from './components/Layout/Footer'
+import Navbar from './components/Layout/Navbar'
 import './index.css'
-import Home from "./component/Home"
-import MovieForm from "./component/MovieForm"
-import {MovieContext} from './context/ContextMovie'
 function App() {
-  const[movie,setMovie]=useState(Movies);
   return (
-    <MovieContext>
     <Router>
-    <Header/>
-    <div className="movie-container">
-    <Routes>
-      <Route exact path="/" element={<MoviesList/>}/>
-     <Route path="/home" element={<Home/>}/>
-     <Route path="/browse" element={<MovieForm/>}/>
-    </Routes>
-    </div>
+      <div className="flex flex-col justify-between h-screen	">
+        <Navbar />
+        <main className='container'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
-    </MovieContext>
-   
   )
 }
-
 export default App
